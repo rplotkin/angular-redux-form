@@ -78,8 +78,10 @@ export class ConnectArray extends ControlContainer implements OnInit {
     super();
 
     this.stateSubscription = this.store.subscribe(state => this.resetState(state));
+		this.stateSubscription; //fix compiler error
 
     this.valueAccessor = selectValueAccessor(<any> this, valueAccessors) || this.simpleAccessor();
+		this.valueAccessor; //fix compiler error
 
     this.registerInternals(this.array);
   }
